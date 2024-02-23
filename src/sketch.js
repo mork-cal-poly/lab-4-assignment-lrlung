@@ -8,17 +8,28 @@ function setup() {
 }
 
 function draw() {
-  background(220);
-  drawCapybara(200,400)
-  drawSnorlaxBody(200,400);
+  drawBackground();
 
+
+  drawCapybara(275,400,1)
+  drawSnorlax(270,300,0,0.40);
+
+  //FOREGROUND WATER
+    push();
+    noStroke();
+    fill('#2389da')
+    rect(0,310,width,height)
+    pop();
+    
 
 }
 
-function drawSnorlaxBody(snorlaxX,snorlaxY){  
+function drawSnorlax(snorlaxX,snorlaxY,snorlaxR,snorlaxS){  
   //SNORLAX BRO
   push();
   translate(snorlaxX,snorlaxY);  
+  rotate(snorlaxR);
+  scale(snorlaxS);
 
   //ARMS
   beginShape();
@@ -164,7 +175,6 @@ function drawSnorlaxBody(snorlaxX,snorlaxY){
   endShape();
   
    //SNORLAX HEAD
-   push();
    //HEAD
    beginShape();
    fill(41,115,142);   //Dark Blue
@@ -196,7 +206,6 @@ function drawSnorlaxBody(snorlaxX,snorlaxY){
    arc(0,-165,109,16,0,PI);
    
    //FACE
-   push();
    beginShape();
      fill(241,229,215);   //Snorlax White
      curveVertex(40,-160);
@@ -261,14 +270,13 @@ function drawSnorlaxBody(snorlaxX,snorlaxY){
      triangle(20,-203,16,-211,12,-203);
      pop();
      
-   pop(); 
   pop();
 }
 
-
-function drawCapybara(capybaraX,capybaraY){
+function drawCapybara(capybaraX,capybaraY,capybaraS){
   push();
    translate(capybaraX, capybaraY);
+   scale(capybaraS)
   
  //capybara
    fill(199,87,43);
@@ -339,4 +347,33 @@ function drawCapybara(capybaraX,capybaraY){
    line(-167,-92,-165,-83);
    
  pop();
+}
+
+function drawBackground(backgroundX,backgroundY){
+  push();
+  background(40);
+  strokeWeight(3);
+  
+  //BUTTON
+  fill(100);   //DARK GREY
+  rect(195,100,50);
+  strokeWeight(1);
+  fill(170);
+  ellipse(220,125,25); 
+  fill(255,0,0);   //RED
+  ellipse(220,125,20);
+  
+  //DIVING BOARD
+  noStroke();
+  fill(255);
+  rect(0,175,145,10);
+  pop();
+  
+  //BACKGROUND WATER
+  push();
+  noStroke();
+  fill('#2389da')
+  rect(0,250,width,height)
+  pop();
+  
 }
