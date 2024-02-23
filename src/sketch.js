@@ -10,7 +10,7 @@ function setup() {
 function draw() {
   drawBackground();
 
-
+  drawPunch(punchX,400);
   drawCapybara(275,400,1)
   drawSnorlax(270,300,0,0.40);
 
@@ -376,4 +376,15 @@ function drawBackground(backgroundX,backgroundY){
   rect(0,250,width,height)
   pop();
   
+}
+
+function drawPunch(punchX,punchY){
+  push();
+  translate(punchX,punchY)
+  fill(255,0,0);   //RED
+  ellipse(-180,-250,20)
+  fill(0);   //BLACK
+  rect(-300,-252,110,5)
+  pop();
+
 }
