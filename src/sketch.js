@@ -4,6 +4,7 @@ let snorlaxY = 175
 let snorlaxR = 0
 let capybaraX = 275
 let capybaraY = 400
+let clicked = false
 
 function setup() {
   // These lines are fitting our canvas
