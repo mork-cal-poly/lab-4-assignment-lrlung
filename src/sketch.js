@@ -9,10 +9,10 @@ function setup() {
 
 function draw() {
   background(220);
-
+  drawCapybara(200,400)
   drawSnorlaxBody(200,400);
-  drawSnorlaxHead(200,400);
-  drawCapybara(200,400);
+
+
 }
 
 function drawSnorlaxBody(snorlaxX,snorlaxY){  
@@ -163,119 +163,115 @@ function drawSnorlaxBody(snorlaxX,snorlaxY){
     curveVertex(-33,-175);
   endShape();
   
+   //SNORLAX HEAD
+   push();
+   //HEAD
+   beginShape();
+   fill(41,115,142);   //Dark Blue
+     curveVertex(55,-165);
+     curveVertex(55,-165);
+   
+     curveVertex(64,-180);
+     curveVertex(64,-200);
+ 
+     //RIGHT EAR
+     curveVertex(58, -225);
+     curveVertex(53,-255);
+     curveVertex(25,-245);
+     
+     //LEFT EAR
+     curveVertex(-25,-245);
+     curveVertex(-53,-255);
+     curveVertex(-57,-225);
+   
+     curveVertex(-64,-200);
+     curveVertex(-64,-180);
+     
+ 
+     curveVertex(-55,-165);
+     curveVertex(-55,-165);    
+   endShape();
+   
+   
+   arc(0,-165,109,16,0,PI);
+   
+   //FACE
+   push();
+   beginShape();
+     fill(241,229,215);   //Snorlax White
+     curveVertex(40,-160);
+     curveVertex(40,-160);
+     curveVertex(53,-173);
+     curveVertex(57,-195);
+     curveVertex(50,-220);
+ 
+     curveVertex(35,-235);
+     curveVertex(0,-240);
+     curveVertex(-35,-235);
+ 
+     curveVertex(-50,-220);
+     curveVertex(-57,-195);
+     curveVertex(-53,-173);
+     curveVertex(-40,-160);
+ 
+     curveVertex(-20,-157);
+     curveVertex(20,-157);
+   
+     curveVertex(40,-160);
+     curveVertex(40,-160);
+   endShape();
+   
+       //TRIANGLE ON FACE
+   push();
+   fill(41,115,142);   //Dark Blue
+   noStroke();
+   triangle(27,-242,-27,-242,0,-225);
+   pop();
+   
+   line(21,-238,0,-225);
+   line(-21,-238,0,-225);
+   
+       //RIGHT EYE
+     beginShape();
+       curveVertex(41,-219);
+       curveVertex(41,-219);
+       curveVertex(39,-220);
+       curveVertex(36,-221);
+       curveVertex(20,-222);
+       curveVertex(15,-222);
+       curveVertex(15,-222);
+     endShape();
+   
+       //LEFT EYE
+     beginShape();
+       curveVertex(-41,-219);
+       curveVertex(-41,-219);
+       curveVertex(-39,-220);
+       curveVertex(-36,-221);
+       curveVertex(-20,-222);
+       curveVertex(-15,-222);
+       curveVertex(-15,-222);
+   endShape();
+   
+       //MOUTH
+     push();
+     fill(255);
+     line(-20,-203,20,-203);
+     triangle(-20,-203,-16,-211,-12,-203);
+     triangle(20,-203,16,-211,12,-203);
+     pop();
+     
+   pop(); 
   pop();
 }
 
-function drawSnorlaxHead(snorlaxX,snorlaxY){  
-  //SNORLAX HEAD
+
+function drawCapybara(capybaraX,capybaraY){
   push();
-  translate(snorlaxX,snorlaxY); 
-  
-  //HEAD
-  beginShape();
-  fill(41,115,142);   //Dark Blue
-    curveVertex(55,-165);
-    curveVertex(55,-165);
-  
-    curveVertex(64,-180);
-    curveVertex(64,-200);
-
-    //RIGHT EAR
-    curveVertex(58, -225);
-    curveVertex(53,-255);
-    curveVertex(25,-245);
-    
-    //LEFT EAR
-    curveVertex(-25,-245);
-    curveVertex(-53,-255);
-    curveVertex(-57,-225);
-  
-    curveVertex(-64,-200);
-    curveVertex(-64,-180);
-    
-
-    curveVertex(-55,-165);
-    curveVertex(-55,-165);    
-  endShape();
-  
-  
-  arc(0,-165,109,16,0,PI);
-  
-  //FACE
-  push();
-  beginShape();
-    fill(241,229,215);   //Snorlax White
-    curveVertex(40,-160);
-    curveVertex(40,-160);
-    curveVertex(53,-173);
-    curveVertex(57,-195);
-    curveVertex(50,-220);
-
-    curveVertex(35,-235);
-    curveVertex(0,-240);
-    curveVertex(-35,-235);
-
-    curveVertex(-50,-220);
-    curveVertex(-57,-195);
-    curveVertex(-53,-173);
-    curveVertex(-40,-160);
-
-    curveVertex(-20,-157);
-    curveVertex(20,-157);
-  
-    curveVertex(40,-160);
-    curveVertex(40,-160);
-  endShape();
-  
-      //TRIANGLE ON FACE
-  push();
-  fill(41,115,142);   //Dark Blue
-  noStroke();
-  triangle(27,-242,-27,-242,0,-225);
-  pop();
-  
-  line(21,-238,0,-225);
-  line(-21,-238,0,-225);
-  
-      //RIGHT EYE
-    beginShape();
-      curveVertex(41,-219);
-      curveVertex(41,-219);
-      curveVertex(39,-220);
-      curveVertex(36,-221);
-      curveVertex(20,-222);
-      curveVertex(15,-222);
-      curveVertex(15,-222);
-    endShape();
-  
-      //LEFT EYE
-    beginShape();
-      curveVertex(-41,-219);
-      curveVertex(-41,-219);
-      curveVertex(-39,-220);
-      curveVertex(-36,-221);
-      curveVertex(-20,-222);
-      curveVertex(-15,-222);
-      curveVertex(-15,-222);
-  endShape();
-  
-      //MOUTH
-    push();
-    fill(255);
-    line(-20,-203,20,-203);
-    triangle(-20,-203,-16,-211,-12,-203);
-    triangle(20,-203,16,-211,12,-203);
-    pop();
-    
-  pop();  
-}
-
-function drawCapybara(x,y,bodyColor,eyeColor){
-  push();
-   translate(x, y);
+   translate(capybaraX, capybaraY);
   
  //capybara
-   fill(bodyColor);
+   fill(199,87,43);
    noStroke();
 
  //background foreleg
@@ -325,7 +321,7 @@ function drawCapybara(x,y,bodyColor,eyeColor){
   
  //eye
    push();
-     fill(eyeColor);  //black
+     fill(0);  //black
      ellipse(-125,-135,22,7);
    pop();
   
