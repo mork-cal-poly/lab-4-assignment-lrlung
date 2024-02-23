@@ -21,6 +21,10 @@ function draw() {
   drawCapybara(capybaraX,capybaraY,1)
   drawSnorlax(snorlaxX,snorlaxY,snorlaxR,0.35);
 
+  if(punchX < 300 && clicked == true){
+    punchX = punchX + 7
+  }
+
   //FOREGROUND WATER
     push();
     noStroke();
