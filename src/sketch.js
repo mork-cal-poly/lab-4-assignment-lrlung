@@ -9,6 +9,10 @@ function setup() {
 
 function draw() {
   background(220);
+
+  drawSnorlaxBody(200,400);
+  drawSnorlaxHead(200,400);
+  drawCapybara(200,400);
 }
 
 function drawSnorlaxBody(snorlaxX,snorlaxY){  
@@ -264,4 +268,79 @@ function drawSnorlaxHead(snorlaxX,snorlaxY){
     pop();
     
   pop();  
+}
+
+function drawCapybara(x,y,bodyColor,eyeColor){
+  push();
+   translate(x, y);
+  
+ //capybara
+   fill(bodyColor);
+   noStroke();
+
+ //background foreleg
+   push();
+     fill('#793921'); //light brown  
+     quad(-50,-45,-25,-42,-21,-4,-30,-4);
+   pop();
+ //foreground foreleg  
+   quad(-50,-45,-25,-42,-27,-12,-42,-12); 
+   quad(-42,-12,-27,-12,-28,0,-51,0);
+ 
+ //background hindleg 
+ push();
+   fill('#793921'); //dark brown 
+   quad(77,-41,90,-41,122,-15,113,-12);
+   triangle(106,-5,111,-17,137,-6); 
+ pop();
+ //foreground hindleg
+   quad(83,-41,128,-45,143,-17,122,-12);
+   quad(120,-14,143,-17,135,0,118,0);
+     
+ //body
+   quad(-50,-130,60,-145,125,-41,-50,-42);
+   arc(70,-87,180,115,5*PI/4,PI/4);
+   arc(38,-43,175,20,0,PI);
+ 
+ //ear on the other side
+   push();
+     fill('#522412'); //dark brown
+     ellipse(-107,-148,16,19);
+   pop();
+ 
+ //neck
+   quad(-100,-155,-50,-130,-50,-43,-120,-95);
+ 
+ //head
+   quad(-173,-128,-99,-155,-119,-95,-168,-92);
+   
+ //nose
+   push(); 
+     fill('#763318');  //dark brown
+     stroke('#763318');  //dark brown
+     quad(-173,-128,-155,-134,-155,-109,-170,-106);
+     fill(15);  //black
+     arc(-165,-120,8,8,5*PI/4,3*PI/4)
+   pop();
+  
+ //eye
+   push();
+     fill(eyeColor);  //black
+     ellipse(-125,-135,22,7);
+   pop();
+  
+ //ear
+   push();
+     fill('#522412');  //dark brown
+     quad(-106,-148,-101,-155,-97,-153,-94,-142);
+     arc(-97,-149,16,15,4*PI/3,PI/2.5);
+   pop();
+ 
+ //teeth
+   fill(255);  //white
+   quad(-168,-92,-163,-92,-163,-83,-166,-83);
+   stroke(1);
+   line(-167,-92,-165,-83);
+   
+ pop();
 }
