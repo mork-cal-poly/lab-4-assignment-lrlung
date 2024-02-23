@@ -1,3 +1,10 @@
+let punchX = 200
+let snorlaxX = 100
+let snorlaxY = 175
+let snorlaxR = 0
+let capybaraX = 275
+let capybaraY = 400
+
 function setup() {
   // These lines are fitting our canvas
   // where we want in the DOM
@@ -11,8 +18,8 @@ function draw() {
   drawBackground();
 
   drawPunch(punchX,400);
-  drawCapybara(275,400,1)
-  drawSnorlax(270,300,0,0.40);
+  drawCapybara(capybaraX,capybaraY,1)
+  drawSnorlax(snorlaxX,snorlaxY,snorlaxR,0.35);
 
   //FOREGROUND WATER
     push();
@@ -364,6 +371,7 @@ function drawBackground(backgroundX,backgroundY){
   ellipse(220,125,20);
   
   //DIVING BOARD
+  push();
   noStroke();
   fill(255);
   rect(0,175,145,10);
@@ -375,7 +383,7 @@ function drawBackground(backgroundX,backgroundY){
   fill('#2389da')
   rect(0,250,width,height)
   pop();
-  
+  pop();
 }
 
 function drawPunch(punchX,punchY){
