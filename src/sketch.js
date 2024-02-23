@@ -25,6 +25,29 @@ function draw() {
     punchX = punchX + 7
   }
 
+  if(punchX >= 230 && snorlaxX < 350){
+    snorlaxX = snorlaxX + 5
+    snorlaxY = snorlaxY - 5
+    snorlaxR = snorlaxR + .5
+  }
+  
+  if(snorlaxX >= 200 && snorlaxX < 350){
+    snorlaxY = snorlaxY + 10 
+  }
+    
+  if(snorlaxX == 350 ){
+    snorlaxX = 350
+    snorlaxY = 275
+    snorlaxR = 0
+  }
+  
+ if (clicked == false){
+   snorlaxX = 100
+   punchX = 200
+   snorlaxR = 0
+   snorlaxY = 175
+ }
+
   //FOREGROUND WATER
     push();
     noStroke();
