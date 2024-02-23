@@ -31,6 +31,11 @@ function draw() {
 
 }
 
+function mouseClicked(){
+  if (mouseX >207 && mouseX<234 && mouseY<137 && mouseY>111)
+  clicked = !clicked
+}
+
 function drawSnorlax(snorlaxX,snorlaxY,snorlaxR,snorlaxS){  
   //SNORLAX BRO
   push();
